@@ -8,6 +8,9 @@ Group:		Applications/Console
 Source0:	http://dl.sourceforge.net/rbllookup/%{name}-%{version}.tar.bz2
 # Source0-md5:	fc0a64bd160a45bc69b6f9a13e7d7d42
 URL:		http://rbllookup.sourceforge.net/
+Requires:	perl-Term-ANSIColor
+Requires:	perl-Net-DNS
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,7 +28,7 @@ linii poleceñ adres.
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_bindir}
-install rbl.pl $RPM_BUILD_ROOT%{_bindir}
+install rbl.pl $RPM_BUILD_ROOT%{_bindir}/rbllookup
 
 %clean
 rm -rf $RPM_BUILD_ROOT
