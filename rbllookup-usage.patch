@@ -1,0 +1,11 @@
+--- rbl.pl~	2003-09-12 19:46:43.000000000 +0200
++++ rbl.pl	2003-10-08 23:41:02.000000000 +0200
+@@ -34,6 +34,8 @@
+ 
+ # Sorting IP/DNS
+ 
++ if ( ! defined($ARGV[0]) ) { die "Usage:\t rbllookup <host/IP> [-v]\n";}
++
+  @iaddr = gethostbyname($ARGV[0]);
+  if ( ! defined @iaddr ) {die "Network Error / Wrong IP/HOST";}
+  if ( defined @iaddr ) {($a,$b,$c,$d) = unpack('C4', @iaddr[4]);}
