@@ -1,5 +1,6 @@
-Summary:	Check given IP/Host presence in RBLs.
-Summary(pl):	Sprawdzenie obecno¶ci adresu IP/Hosta w bazach RBL.
+%include	/usr/lib/rpm/macros.perl
+Summary:	Check given IP/Host presence in RBLs
+Summary(pl):	Sprawdzenie obecno¶ci adresu IP/Hosta w bazach RBL
 Name:		rbllookup
 Version:	0.0.1.1
 Release:	0.2
@@ -9,27 +10,30 @@ Source0:	http://dl.sourceforge.net/rbllookup/%{name}-%{version}.tar.bz2
 # Source0-md5:	fc0a64bd160a45bc69b6f9a13e7d7d42
 Patch0:		%{name}-usage.patch
 URL:		http://rbllookup.sourceforge.net/
-Requires:	perl-Term-ANSIColor
-Requires:	perl-Net-DNS
+BuildRequires:	perl-Net-DNS
+BuildRequires:	perl-modules
+BuildRequires:	rpm-perlprov
+# already in perl-modules in appropriate version
+BuildRequires:	perl(Term::ANSIColor)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Check given IP/Host presence in 106 RBLs. Now, you don't have to check
-a lot www sites, just run this script in console.
+a lot of WWW sites, just run this script in console.
 
 %description -l pl
 Za pomoc± tego programu mo¿liwe jest odpytanie 106 baz RBL o podany z
 linii poleceñ adres.
 
 %prep
-%setup -q -c -n %{name}-%{version}
+%setup -q -c
 %patch0 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_bindir}
+
 install rbl.pl $RPM_BUILD_ROOT%{_bindir}/rbllookup
 
 %clean
