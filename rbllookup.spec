@@ -2,11 +2,12 @@ Summary:	Check given IP/Host presence in RBLs.
 Summary(pl):	Sprawdzenie obecno¶ci adresu IP/Hosta w bazach RBL.
 Name:		rbllookup
 Version:	0.0.1.1
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Applications/Console
 Source0:	http://dl.sourceforge.net/rbllookup/%{name}-%{version}.tar.bz2
 # Source0-md5:	fc0a64bd160a45bc69b6f9a13e7d7d42
+Patch0:		%{name}-usage.patch
 URL:		http://rbllookup.sourceforge.net/
 Requires:	perl-Term-ANSIColor
 Requires:	perl-Net-DNS
@@ -23,6 +24,7 @@ linii poleceñ adres.
 
 %prep
 %setup -q -c -n %{name}-%{version}
+%patch0 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
