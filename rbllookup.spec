@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Check given IP/Host presence in RBLs
-Summary(pl):	Sprawdzenie obecno∂ci adresu IP/Hosta w bazach RBL
+Summary(pl.UTF-8):   Sprawdzenie obecno≈õci adresu IP/Hosta w bazach RBL
 Name:		rbllookup
 Version:	0.0.1.1
 Release:	0.2
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Check given IP/Host presence in 106 RBLs. Now, you don't have to check
 a lot of WWW sites, just run this script in console.
 
-%description -l pl
-Za pomoc± tego programu moøliwe jest odpytanie 106 baz RBL o podany z
-linii poleceÒ adres.
+%description -l pl.UTF-8
+Za pomocƒÖ tego programu mo≈ºliwe jest odpytanie 106 baz RBL o podany z
+linii polece≈Ñ adres.
 
 %prep
 %setup -q -c
