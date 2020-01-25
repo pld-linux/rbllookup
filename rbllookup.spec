@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	Check given IP/Host presence in RBLs
 Summary(pl.UTF-8):	Sprawdzenie obecności adresu IP/Hosta w bazach RBL
 Name:		rbllookup
